@@ -9,15 +9,16 @@ import { AboutSection } from '@/components/sections/about-section';
 
 interface ProductPageProps {
   data: ProductData;
+  currentLang?: string;
 }
 
-export function ProductPage({ data }: ProductPageProps) {
+export function ProductPage({ data, currentLang }: ProductPageProps) {
   // Sort sections by order_idx
   const sortedSections = [...data.sections].sort((a, b) => a.order_idx - b.order_idx);
 
   return (
     <div className="min-h-screen bg-white">
-      <HeroSection data={data} />
+      <HeroSection data={data} currentLang={currentLang} />
       <ChecklistSection checklist={data.checklist} />
       
       {sortedSections.map((section) => {

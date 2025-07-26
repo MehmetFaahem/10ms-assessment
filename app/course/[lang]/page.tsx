@@ -66,7 +66,7 @@ export default async function CoursePage({ params }: PageProps) {
       notFound();
     }
 
-    return <ProductPage data={response.data} />;
+    return <ProductPage data={response.data} currentLang={params.lang} />;
   } catch (error) {
     console.error('Error fetching product data:', error);
     notFound();

@@ -2,12 +2,14 @@ import { ProductData } from '@/types/product';
 import { YouTubeEmbed } from '@/components/ui/youtube-embed';
 import { extractVideoId } from '@/lib/api';
 import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/ui/language-switcher';
 
 interface HeroSectionProps {
   data: ProductData;
+  currentLang?: string;
 }
 
-export function HeroSection({ data }: HeroSectionProps) {
+export function HeroSection({ data, currentLang = 'en' }: HeroSectionProps) {
   const trailerVideo = data.media.find(
     (item) => item.name === 'preview_gallery' && item.resource_type === 'video'
   );
@@ -15,6 +17,10 @@ export function HeroSection({ data }: HeroSectionProps) {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
       <div className="container mx-auto px-4">
+        {/* Language Switcher */}
+        <div className="flex justify-end mb-4">
+          <LanguageSwitcher currentLang={currentLang} />
+        </div>
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Content */}
           <div className="space-y-6">

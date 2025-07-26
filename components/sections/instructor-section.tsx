@@ -17,7 +17,7 @@ export function InstructorSection({ section }: InstructorSectionProps) {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-1">
           {section.values.map((instructor, index) => (
             <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="mb-6">

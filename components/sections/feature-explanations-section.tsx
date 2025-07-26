@@ -35,7 +35,7 @@ export function FeatureExplanationsSection({ section }: FeatureExplanationsSecti
                 </h3>
                 
                 <ul className="space-y-2">
-                  {feature.checklist.map((item, itemIndex) => (
+                  {feature.checklist.map((item: string, itemIndex: number) => (
                     <li key={itemIndex} className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm leading-relaxed">
